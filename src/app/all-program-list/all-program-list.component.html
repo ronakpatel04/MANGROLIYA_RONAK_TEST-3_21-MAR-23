@@ -1,0 +1,42 @@
+<div class="container">
+  <button mat-raised-button id="btn" (click)="addProgram()" color="primary">
+    ADD PROGRAM
+  </button>
+
+  <ejs-grid [dataSource]="data">
+    <e-columns>
+      <e-column
+        field="programName"
+        headerText="Program Name"
+        textAlign="left"
+        width="250"
+      ></e-column>
+      <e-column
+        field="programNumber"
+        headerText="Program Number"
+        textAlign="left"
+        width="250"
+      ></e-column>
+      <e-column
+        field="programBudget"
+        headerText="Program Budget"
+        textAlign="left"
+        width="250"
+      ></e-column>
+      <e-column
+        field="programDescription"
+        headerText="Description"
+        textAlign="left"
+        width="250"
+      ></e-column>
+      <e-column field="action" headerText="Action" textAlign="left" width="250">
+        <ng-template #template let-data>
+          <button type="button" id="edit" (click)="onEdit(data)">Edit</button>
+          <button type="button" (click)="onStatusChange(data)">
+            {{ data.isActive ? "Deactive" : "active" }}
+          </button>
+        </ng-template>
+      </e-column>
+    </e-columns>
+  </ejs-grid>
+</div>

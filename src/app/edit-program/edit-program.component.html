@@ -1,0 +1,50 @@
+<div mat-dialog-title>
+  <h1>{{data?'Update Program': 'Create Program'}}</h1>
+</div>
+<form [formGroup] = "programForm" (ngSubmit)="onFormSubmit()">
+  <div mat-dialog-content class="content">
+    <div class="row">
+      <p>
+        <mat-form-field appearance="fill">
+          <mat-label>Program Name*</mat-label>
+          <input matInput placeholder=""  formControlName="programName"/>
+        </mat-form-field>
+      </p>
+    </div>
+    <div class="row">
+      <p>
+        <mat-form-field appearance="fill">
+          <mat-label>Program Number*</mat-label>
+          <input matInput placeholder="" formControlName="programNumber" />
+        </mat-form-field>
+      </p>
+    </div>
+    <div class="row">
+      <p>
+        <mat-form-field appearance="fill">
+          <mat-label>Program Budget*</mat-label>
+          <input matInput placeholder="" formControlName="programBudget"/>
+        </mat-form-field>
+      </p>
+    </div>
+    <div class="row">
+      <p>
+        <mat-form-field appearance="fill">
+          <mat-label>Program Description *</mat-label>
+          <input matInput placeholder="" formControlName="programDescription" />
+        </mat-form-field>
+      </p>
+    </div>
+
+    <div class="row">
+      <section class="example-section">
+        <mat-checkbox class="example-margin" formControlName="isVirtual">Virtual Program</mat-checkbox>
+      </section>
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button color="primary" type="submit">{{data ? 'update' :'save'}}</button>
+        <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+      
+      </div>
+  </div>
+</form>
