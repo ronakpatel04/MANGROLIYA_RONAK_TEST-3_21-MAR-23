@@ -11,7 +11,6 @@ import { Program } from '../shared/apiResponse.interface';
 })
 export class AllProgramListComponent implements OnInit {
   data: Program[] = [];
-  status: string = 'active';
 
   constructor(
     private programService: ProgramService,

@@ -52,9 +52,9 @@ export class ProgramService {
   }
   activeProgram(programid: string): Observable<any> {
     const formData = new FormData();
-    formData.append('programId', programid);
+    formData.append('programID', programid);
     return this.http.put(
-      `http://cmi-ofm.azurewebsites.net/api/Program/${programid}/Active`,
+      `http://cmi-ofm.azurewebsites.net/api/Program/${programid}/Activate`,
       formData,
       {
         headers: {
